@@ -21,6 +21,7 @@
         "test:e2e": "jest --config ./test/jest-e2e.json"
     },
     "dependencies": {
+        "@fastify/static": "^6.4.0",
         "@nestjs/common": "^9.0.1",
         "@nestjs/core": "^9.0.1",
         "@nestjs/platform-express": "^9.0.1",
@@ -38,7 +39,8 @@
         "rxjs": "^7.5.5",
         "sanitize-html": "^2.7.0",
         "sqlite3": "^5.0.8",
-        "typeorm": "^0.3.7"
+        "typeorm": "^0.3.7",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "@nestjs/cli": "^9.0.0",
@@ -50,6 +52,7 @@
         "@types/node": "^18.0.3",
         "@types/sanitize-html": "^2.6.2",
         "@types/supertest": "^2.0.12",
+        "@types/uuid": "^8.3.4",
         "@typescript-eslint/eslint-plugin": "^5.30.5",
         "@typescript-eslint/parser": "^5.30.5",
         "cross-env": "^7.0.3",
@@ -88,7 +91,10 @@
             "**/*.(t|j)s"
         ],
         "coverageDirectory": "../coverage",
-        "testEnvironment": "node"
+        "testEnvironment": "node",
+        "moduleNameMapper": {
+            "@/(.*)": "<rootDir>/$1"
+        }
     },
     "pnpm": {
         "peerDependencyRules": {

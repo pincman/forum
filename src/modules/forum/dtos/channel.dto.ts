@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-import { PartialType } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional, PartialType } from '@nestjs/swagger';
 import { IsDefined, IsNotEmpty, IsOptional, IsUUID, MaxLength } from 'class-validator';
-
-import { DataSource } from 'typeorm';
 
 import { IsUnique, IsUniqueExist } from '@/modules/core/constraints';
 import { DtoValidation } from '@/modules/core/decorators';
@@ -13,15 +11,8 @@ import { ChannelEntity } from '../entities';
 @Injectable()
 @DtoValidation({ groups: ['create'] })
 export class CreateChannelDto {
-    constructor(private dataSource: DataSource) {}
-
-    /**
-     * @description this function is for isunique validator
-     */
-    getManager() {
-        return this.dataSource;
-    }
-
+    @ApiProperty({ description: '频道名称,名称唯一', uniqueItems: true, required: true })
+    @ApiPropertyOptional({ required: false })
     @IsUnique(ChannelEntity, {
         groups: ['create'],
         message: '分类名称重复',
@@ -42,6 +33,7 @@ export class CreateChannelDto {
 @Injectable()
 @DtoValidation({ groups: ['update'] })
 export class UpdateChannelDto extends PartialType(CreateChannelDto) {
+    @ApiProperty({ description: '频道UUID', required: true })
     @IsUUID(undefined, { groups: ['update'], message: '频道ID格式错误' })
     @IsDefined({ groups: ['update'], message: '频道ID必须指定' })
     id!: string;

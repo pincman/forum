@@ -2,6 +2,7 @@
 .env.*
 
 # compiled output
+back
 dist
 node_modules
 .history

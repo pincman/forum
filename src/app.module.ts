@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { database } from './config/database.config';
 import { CoreModule } from './modules/core/core.module';
-import { ForumModule } from './modules/forum/content.module';
+import { ForumModule } from './modules/forum/forum.module';
 
 @Module({
     imports: [ForumModule, CoreModule.forRoot(database())],
