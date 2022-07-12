@@ -2,6 +2,6 @@
     "$schema": "https://json.schemastore.org/nest-cli",
     "collection": "@nestjs/schematics",
     "sourceRoot": "src",
-    "assets": ["database/database.sqlite", "ecosystem.config.js"],
+    "assets": ["database/database.sqlite"],
     "watchAssets": true
 }

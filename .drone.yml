@@ -10,6 +10,7 @@ steps:
           - npm run build
           - cp package.json ./dist
           - cp package-lock.json ./dist
+          - cp ecosystem.config.js ./dist
     - name: upload
       image: appleboy/drone-scp
       settings:
