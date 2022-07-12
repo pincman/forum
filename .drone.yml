@@ -8,6 +8,7 @@ steps:
           - npm config set registry https://registry.npmmirror.com/
           - npm install --save --legacy-peer-deps
           - npm run build
+          - cp package.json ./dist
           - cp package-lock.json ./dist
     - name: upload
       image: appleboy/drone-scp
@@ -41,4 +42,4 @@ steps:
           script:
               - rm -rf $${DEPLOY_PATH}
               - mv /tmp/forum  $${DEPLOY_PATH}
-              - cd $${DEPLOY_PATH} && npm install --save --legacy-peer-deps
+              - cd $${DEPLOY_PATH} && $HOME/.n/bin/npm install --save --legacy-peer-deps
