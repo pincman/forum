@@ -6,7 +6,7 @@ steps:
       image: node
       commands:
           - npm config set registry https://registry.npmmirror.com/
-          - npm install
+          - npm install --save --legacy-peer-deps
           - npm run build
     - name: upload
       image: appleboy/drone-scp
