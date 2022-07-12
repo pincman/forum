@@ -79,7 +79,7 @@ code --install-extension dbaeumer.vscode-eslint \
 -   drone构建完毕自动把产出物(即`dist`包)通过ssh输送到生产服务器
 -   drone在输送完编译包后,pm2将自启对应用进行部署
 
-drone配置请参考[源代码](https://git.pincman.com/employer/forum/src/branch/main/drone.yml)
+drone配置请参考[源代码](https://git.pincman.com/employer/forum/src/branch/main/.drone.yml)
 
 ![QQ20220712-182104@2x](https://pic.pincman.com/media/202207121821025.png)
 
