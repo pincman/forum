@@ -41,5 +41,5 @@ steps:
           envs: [DEPLOY_PATH]
           script:
               - rm -rf $${DEPLOY_PATH}
-              - mv /tmp/forum  $${DEPLOY_PATH}
+              - mv /tmp/forum/dist  $${DEPLOY_PATH}
               - cd $${DEPLOY_PATH} && $HOME/.n/bin/npm install --save --legacy-peer-deps
