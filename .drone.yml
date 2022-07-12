@@ -7,6 +7,7 @@ steps:
       commands:
           - npm config set registry https://registry.npmmirror.com/
           - npm install -g pnpm
+          - pnpm config set registry https://registry.npmmirror.com/
           - pnpm i
           - pnpm clear && pnpm build
     - name: upload
