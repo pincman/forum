@@ -6,7 +6,7 @@ steps:
       image: node
       commands:
           - npm config set registry https://registry.npmmirror.com/
-          - npm run clear && npm run build
+          - npm run build
     - name: upload
       image: appleboy/drone-scp
       settings:
