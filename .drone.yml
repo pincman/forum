@@ -8,7 +8,7 @@ steps:
           - npm config set registry https://registry.npmmirror.com/
           - npm install --save --legacy-peer-deps
           - npm run build
-          - cp package-lock.json ./build
+          - cp package-lock.json ./dist
     - name: upload
       image: appleboy/drone-scp
       settings:
@@ -22,7 +22,7 @@ steps:
           command_timeout: 2m
           target: /tmp/forum
           source:
-              - ./
+              - ./dist
     - name: deploy
       image: appleboy/drone-ssh
       environment:
