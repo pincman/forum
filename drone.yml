@@ -22,7 +22,7 @@ steps:
           command_timeout: 2m
           target: /tmp/forum
           source:
-              - ./build
+              - ./dist
     - name: deploy
       image: appleboy/drone-ssh
       environment:
@@ -40,4 +40,4 @@ steps:
           envs: [DEPLOY_PATH]
           script:
               - rm -rf $${DEPLOY_PATH}
-              - mv /tmp/forum/build $${DEPLOY_PATH}
+              - mv /tmp/forum/dist $${DEPLOY_PATH}
