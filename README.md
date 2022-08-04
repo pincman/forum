@@ -1,4 +1,4 @@
-# Forum手册
+# 一道node.js后端面试题--构建一个简单的频道<->消息应用
 
 -   源码: https://git.pincman.com/employer/forum
 -   API: https://forum.pincman.com/api
