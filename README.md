@@ -1,4 +1,6 @@
-# 一道node.js后端面试题--构建一个简单的频道<->消息应用
+# 一道node.js后端面试题
+
+> 构建一个简单的频道<->消息应用,支持TDD,E2E测试，swagger（open api）文档,CI/CD
 
 -   源码: https://git.pincman.com/employer/forum
 -   API: https://forum.pincman.com/api
